@@ -15,3 +15,20 @@ chrome.runtime.onMessage.addListener(
     }
   }
 );
+
+//contextMenu so user can right click selection
+chrome.contextMenus.create({
+    "title": "go to CosDNA",
+    "contexts": ["selection"],
+    "onclick": clickMenu
+});
+
+function clickMenu(e) {
+  var selection = encodeURIComponent(e.selectionText);
+
+  /* string actually still works when include URI spaces */
+  selection = selection.replace("%0A", "+"); //dont really need
+  var cosDNAHref = "http://cosdna.com/eng/product.php?q=".concat(selection);
+
+  chrome.tabs.create({"url": cosDNAHref});
+}

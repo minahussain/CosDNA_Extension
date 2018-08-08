@@ -4,6 +4,8 @@ Download the chrome extension [here](https://chrome.google.com/webstore/detail/c
 
 You can highlight text and open a new CosDNA search tab of your selection using this extension.
 
-## Future Updates
+## Updates
 
-Plan to add a context menu and also make a Firefox extension.
+Update 1.2: added context menu.
+
+Future plans to make a Firefox extension.
