@@ -2,10 +2,11 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "clicked_browser_action" ) {
-   	  /* get the selected string */
+      /** can replace the following code with string.encodeURI method **/
+      /*
    	  var selection = window.getSelection().toString();
 
-   	  /* replace these 'escaped' chars */
+   	  //replace these chars
    	  var symbols = {
 	    '@': '%40',
 	    '&': '%26',
@@ -18,14 +19,19 @@ chrome.runtime.onMessage.addListener(
 	  };
 	  selection = selection.replace(/[™@*+&\/\<\>]/g, function (m) { return symbols[m]; });
    	  
-   	  /* split selected string based on spaces or newline 
-   	  	 query has each word concat'd with '+' */
+   	  // split selected string based on spaces or newline 
    	  var selectionArr = selection.split(/\s+/g);
    	  var cosDNAHref = "http://cosdna.com/eng/product.php?q=";
    	  var i;
    	  for (i = 0; i < selectionArr.length; i++) {
    	  	cosDNAHref = cosDNAHref.concat("+", selectionArr[i]);
-   	  }
+   	  }*/
+
+   	  var selection = encodeURIComponent(window.getSelection().toString());
+
+	  /* string actually still works when include URI spaces */
+	  selection = selection.replace("%0A", "+"); //dont really need
+	  var cosDNAHref = "http://cosdna.com/eng/product.php?q=".concat(selection);
 
    	  /* send the final href string */
       chrome.runtime.sendMessage({"message": "open_new_tab", "url": cosDNAHref});
