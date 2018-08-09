@@ -11,6 +11,7 @@ Icon made using HTML Canvas.
 ## Updates
 
 Update 1.2: added context menu.
+
 Update 1.3: updated jquery to version 3.3.1
 
 Future plans to add as a Firefox extension.
