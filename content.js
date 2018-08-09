@@ -2,11 +2,9 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "clicked_browser_action" ) {
+    	var selection = window.getSelection().toString();
       /** can replace the following code with string.encodeURI method **/
-      /*
-   	  var selection = window.getSelection().toString();
-
-   	  //replace these chars
+   	  /*
    	  var symbols = {
 	    '@': '%40',
 	    '&': '%26',
@@ -27,7 +25,7 @@ chrome.runtime.onMessage.addListener(
    	  	cosDNAHref = cosDNAHref.concat("+", selectionArr[i]);
    	  }*/
 
-   	  var selection = encodeURIComponent(window.getSelection().toString());
+   	  selection = encodeURIComponent(selection);
 
 	  /* string actually still works when include URI spaces */
 	  selection = selection.replace("%0A", "+"); //dont really need
