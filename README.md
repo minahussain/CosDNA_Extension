@@ -1,6 +1,10 @@
-# CosDNA Extension - Chrome
+# CosDNA Extension
+
+## Chrome
 
 Download the Chrome extension [here](https://chrome.google.com/webstore/detail/cosdna-extension/apjcnjbhemlgjpfkbfdcmgopangnienl?hl=en-US&gl=US).
+
+## Firefox
 
 Download the Firefox addon [here](https://addons.mozilla.org/en-US/firefox/addon/cosdna-addon/)
 
